@@ -1,0 +1,37 @@
+var connection = require("connection.js");
+
+var orm = {
+  selectAll: function(colName, tableName) {
+    var query = "SELECT ?? FROM ??";
+
+    connection.query(query, [colName, tableName], (err, result) => {
+      if (err) throw err;
+
+      console.log(result);
+    });
+  },
+  insertOne: function(tableName, colName, insertValue) {
+    var query = "INSERT INTO ?? (??) VALUES (?)";
+
+    connection.query(
+      query,
+      [tableName, colName, insertValue],
+      (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+      }
+    );
+  },
+  updateOne: function(tableName, colName, val, id) {
+    var query = "UPDATE ?? SET ??=? WHERE id=?";
+
+    connection.query(query, [tableName, colName, val, id], (err, result) => {
+      if (err) throw err;
+
+      console.log(result);
+    });
+  }
+};
+
+module.exports = orm;
