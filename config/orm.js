@@ -1,16 +1,16 @@
 var connection = require("connection.js");
 
 var orm = {
-  selectAll: function(colName, tableName) {
+  selectAll: function(colName, tableName, cb) {
     var query = "SELECT ?? FROM ??";
 
     connection.query(query, [colName, tableName], (err, result) => {
       if (err) throw err;
 
-      console.log(result);
+      cb(result);
     });
   },
-  insertOne: function(tableName, colName, insertValue) {
+  insertOne: function(tableName, colName, insertValue, cb) {
     var query = "INSERT INTO ?? (??) VALUES (?)";
 
     connection.query(
@@ -19,17 +19,17 @@ var orm = {
       (err, result) => {
         if (err) throw err;
 
-        console.log(result);
+        cb(result);
       }
     );
   },
-  updateOne: function(tableName, colName, val, id) {
+  updateOne: function(tableName, colName, val, id, cb) {
     var query = "UPDATE ?? SET ??=? WHERE id=?";
 
     connection.query(query, [tableName, colName, val, id], (err, result) => {
       if (err) throw err;
 
-      console.log(result);
+      cb(result);
     });
   }
 };
