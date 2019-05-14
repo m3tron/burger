@@ -1,38 +1,42 @@
-<div class="ui container">
-    <h1>Burger Logger</h1>
+<div class="container">
+    <h1 class="text-center">Eat-Da-Burger!</h1>
 
-    <div>
-        <h3>Burgers to Devour!</h3>
-
-        <div class="row ui list">
-            {{#each burger}}
-            {{#unless devoured}}
-            {{>burgerPartial devoured=false}}
-            {{/unless}}
-            {{/each}}
-        </div>
+    <div class="form-group center-block">
+        <label for="newBurger">
+            <h3>Add a Burger</h3>
+        </label>
+        <input id="newBurger" class="form-control col-5" type="text" placeholder="Enter a burger here">
+        <button id="newBurgerButton" class="ui black button">Add Burger</button>
     </div>
+
     <br>
-    <div>
-        <h3>Burgers Devoured!</h3>
 
-        <div class="ui list">
-            {{#each burger}}
-            {{#if devoured}}
-            {{>burgerPartial devoured=true}}
-            {{/if}}
-            {{/each}}
+    <div class="row">
+        <div id="burgersToEat" class="col-6 text-center">
+            <h3>Burgers to Devour!</h3>
+
+            <ul class="list-group">
+                {{#each burger}}
+                {{#unless devoured}}
+                {{>burgerPartial devoured=false}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        <div id="burgersEaten" class="col-6 text-center">
+            <h3>Burgers Devoured!</h3>
+
+            <ul class="list-group">
+                {{#each burger}}
+                {{#if devoured}}
+                {{>burgerPartial devoured=true}}
+                {{/if}}
+                {{/each}}
+            </ul>
         </div>
     </div>
 
-    <div class="ui form">
-        <div class="field five wide">
-            <label>
-                <h3>Add a Burger</h3>
-            </label>
-            <input id="newBurger" type="text" placeholder="Enter a burger here">
-            <button id="newBurgerButton" class="ui black button">Add Burger</button>
-        </div>
-    </div>
+
 
 </div>

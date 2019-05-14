@@ -27,8 +27,14 @@ router.post("/api/burgers", (req, res) => {
   });
 });
 
-/* router.put('/',(req,res)=>{
-  burger.updateBurger(id,res)
-}) */
+router.put("/api/burgers/:id", (req, res) => {
+  var id = req.params.id;
+  console.log(id);
+
+  burger.updateBurger(id, data => {
+    console.log(data);
+    res.json(data);
+  });
+});
 
 module.exports = router;

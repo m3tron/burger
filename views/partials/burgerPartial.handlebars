@@ -1,8 +1,13 @@
 <li>
-    {{burger_name}}
 
-    <button class="eat-it" data-id=:{{id}} data-devoured={{devoured}}>
-        {{#if devoured}}Devoured!{{else}}Eat it!{{/if}}
+    {{#unless devoured}}
+    <button class="eatIt list-group-item list-group-item-action" data-id="{{id}}" data-devoured="{{devoured}}">
+        {{burger_name}}
     </button>
+    {{/unless}}
+
+    {{#if devoured}}
+    {{burger_name}}
+    {{/if}}
 
 </li>
