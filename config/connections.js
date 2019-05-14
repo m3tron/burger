@@ -10,9 +10,8 @@ var connection = mysql.createConnection({
 
 connection.connect(err => {
   if (err) {
-    console.log(`Connection Error: ${err}`);
+    console.log(`Connection Error: ${err.stack}`);
   }
-
   console.log(`Connected as id: ${connection.threadId}`);
 });
 

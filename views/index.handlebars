@@ -1,1 +1,38 @@
-<h1>Hi</h1>
+<div class="ui container">
+    <h1>Burger Logger</h1>
+
+    <div>
+        <h3>Burgers to Devour!</h3>
+
+        <div class="row ui list">
+            {{#each burger}}
+            {{#unless devoured}}
+            {{>burgerPartial devoured=false}}
+            {{/unless}}
+            {{/each}}
+        </div>
+    </div>
+    <br>
+    <div>
+        <h3>Burgers Devoured!</h3>
+
+        <div class="ui list">
+            {{#each burger}}
+            {{#if devoured}}
+            {{>burgerPartial devoured=true}}
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="ui form">
+        <div class="field five wide">
+            <label>
+                <h3>Add a Burger</h3>
+            </label>
+            <input id="newBurger" type="text" placeholder="Enter a burger here">
+            <button id="newBurgerButton" class="ui black button">Add Burger</button>
+        </div>
+    </div>
+
+</div>
