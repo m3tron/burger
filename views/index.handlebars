@@ -1,15 +1,16 @@
 <div class="container">
+    <br>
     <h1 class="text-center">Eat-Da-Burger!</h1>
 
-    <div class="form-group center-block">
-        <label for="newBurger">
-            <h3>Add a Burger</h3>
-        </label>
+    <br>
+    <h4 class="text-center">Add a burger</h4>
+    <div class="form-inline d-flex justify-content-center">
+
         <input id="newBurger" class="form-control col-5" type="text" placeholder="Enter a burger here">
-        <button id="newBurgerButton" class="ui black button">Add Burger</button>
+        <button id="newBurgerButton" class="btn btn-dark">Add Burger</button>
     </div>
 
-    <br>
+    <br><br><br>
 
     <div class="row">
         <div id="burgersToEat" class="col-6 text-center">
@@ -37,6 +38,12 @@
         </div>
     </div>
 
-
+    <footer class="fixed-bottom">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="/api/burgers">Burger API</a>
+            </li>
+        </ul>
+    </footer>
 
 </div>
