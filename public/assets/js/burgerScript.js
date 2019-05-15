@@ -1,27 +1,29 @@
 $(function() {
+  //updates burger to devoured on clicking the burger
   $(".eatIt").on("click", function(e) {
-    //e.preventDefault();
+    //id of burger button associated to burger_name
     var id = $(this).data("id");
 
-    console.log(id);
-
+    //ajax request to api
     $.ajax("/api/burgers/" + id, {
       method: "PUT"
     }).then(data => {
-      console.log(data);
       location.reload();
     });
   });
 
+  //creates new burger by clicking add burger button
   $("#newBurgerButton").on("click", e => {
     e.preventDefault();
 
+    //new burger name from form
     var newBurger = {
       burger_name: $("#newBurger")
         .val()
         .trim()
     };
 
+    //ajax request to create new burger
     $.ajax("/api/burgers", {
       method: "POST",
       data: newBurger

@@ -1,5 +1,7 @@
 var orm = require("../config/orm.js");
 
+//Model for burger app. Simplyfies functions from orm.
+
 var burger = {
   allBurgers: function(cb) {
     orm.selectAll("*", "burgers", res => {
