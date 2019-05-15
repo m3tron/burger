@@ -8,7 +8,7 @@ Burger logger with MySQL, Node, Express, Handlebars, homemade ORM
 - create a database with the _**schema.sql**_ file
 - in the terminal console run _**node server.js**_
 - open app in a web browser of your choice
-- enter a burger name in the text field and click **add new burger**
+- enter a burger name in the text field and click **add burger**
 - click on the burger name to devour it and it moves to the right side of the screen
 
 ### Technologies used:
