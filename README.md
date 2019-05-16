@@ -19,6 +19,7 @@ Burger logger with MySQL, Node, Express, Handlebars, homemade ORM
 - Express
 - Handlebars
 - MySql
+- JavaScript
 - HTML & CSS
 - Bootstrap
 
